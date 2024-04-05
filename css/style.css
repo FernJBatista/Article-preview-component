@@ -156,6 +156,7 @@ main {
   border-radius: 1rem;
   background-color: white;
   max-width: 64rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 main img.left-image {
   max-width: 24rem;
@@ -222,6 +223,20 @@ main div.article-content div.author-and-share-row div.share {
   cursor: pointer;
   position: relative;
 }
+main div.article-content div.author-and-share-row div.share p.share-text {
+  font-size: 0.8rem;
+  letter-spacing: 0.25rem;
+  color: var(--Grayish-Blue);
+}
+main div.article-content div.author-and-share-row div.share div.social-media {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+main div.article-content div.author-and-share-row div.share div.social-media img {
+  cursor: pointer;
+}
 main div.article-content div.author-and-share-row div.share div.tooltip {
   display: none;
   flex-direction: row;
@@ -234,18 +249,26 @@ main div.article-content div.author-and-share-row div.share div.tooltip {
   margin-bottom: 8rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   cursor: default;
+  z-index: 1;
 }
-main div.article-content div.author-and-share-row div.share div.tooltip p.share-text {
-  font-size: 0.8rem;
-  letter-spacing: 0.25rem;
-  color: var(--Grayish-Blue);
-}
-main div.article-content div.author-and-share-row div.share div.tooltip div.social-media {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
-main div.article-content div.author-and-share-row div.share div.tooltip div.social-media img {
-  cursor: pointer;
+
+@media screen and (max-width: 578px) {
+  body {
+    padding: 1rem;
+  }
+  main {
+    flex-direction: column;
+    padding: 0 0 1rem 0;
+  }
+  main img.left-image {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+  main div.article-content {
+    padding: 0 1.5rem 0.5rem 1.5rem;
+  }
+  main div.article-content div.share div.tooltip {
+    /* display: flex !important;
+    position: static !important; */
+  }
 }
